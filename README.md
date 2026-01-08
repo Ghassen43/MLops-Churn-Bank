@@ -10,7 +10,7 @@ Système MLOps complet pour la prédiction du churn bancaire avec API REST, moni
 
 ## 🌐 Démo en Ligne
 
-- **🎨 Interface Streamlit**: http://localhost:8501 (local)
+- **🎨 Interface Streamlit**: http://localhost:8501 (local) // https://bank-churn-ui.braveforest-d43eb01f.francecentral.azurecontainerapps.io/
 - **🚀 API REST**: https://bank-churn.braveforest-d43eb01f.francecentral.azurecontainerapps.io
 - **📖 Documentation API**: https://bank-churn.braveforest-d43eb01f.francecentral.azurecontainerapps.io/docs
 - **❤️ Health Check**: https://bank-churn.braveforest-d43eb01f.francecentral.azurecontainerapps.io/health
