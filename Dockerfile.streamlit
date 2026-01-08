@@ -1,0 +1,34 @@
+# Dockerfile pour Streamlit
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# Copier les fichiers de dependances
+COPY requirements-streamlit.txt .
+
+# Installer les dependances
+RUN pip install --no-cache-dir -r requirements-streamlit.txt
+
+# Copier l'application
+COPY streamlit_app.py .
+
+# Creer le dossier de config Streamlit
+RUN mkdir -p ~/.streamlit
+
+# Configuration Streamlit
+RUN echo "\
+[server]\n\
+headless = true\n\
+port = 8501\n\
+enableCORS = false\n\
+enableXsrfProtection = false\n\
+\n\
+[browser]\n\
+gatherUsageStats = false\n\
+" > ~/.streamlit/config.toml
+
+# Exposer le port
+EXPOSE 8501
+
+# Commande de demarrage
+CMD ["streamlit", "run", "streamlit_app.py", "--server.address", "0.0.0.0"]
